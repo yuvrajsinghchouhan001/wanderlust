@@ -52,7 +52,7 @@ app.get("/listings/:id", async (req,res) =>{
 app.post("/listings", async (req,res) =>{
    const newlisting = new Listing(req.body.listing);
    await newlisting.save();
-   res.redirect("/listing");
+   res.redirect("/listings");
 });
 
 //Edit Route
