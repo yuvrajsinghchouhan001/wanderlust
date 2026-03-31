@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WanderLust</title>
-</head>
-<body>
+<% layout("/layouts/boilerplate") %>
      <h3>Edit your listing</h3>
     <form method = "POST" action="/listings/<%= listing._id %>?_method=PUT">
-        <input name="listing[title]" value= "<%= listing.title %>" type="text" /><!-- Here we have created key value pair. yaha par hamne ek object bana diya listing naam se aur uski key rakh di title-->
-        <br /><br />
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" value= "<%= listing.title %>" type="text" class="form-control"/><!-- Here we have created key value pair. yaha par hamne ek object bana diya listing naam se aur uski key rakh di title-->
+        </div>
         <textarea name="listing[description]"><%= listing.description %></textarea>
         <br /><br />
          <input name="listing[image]" value= "<%= listing.image %>" type="text" />
@@ -21,6 +16,6 @@
         <input name="listing[location]" value= "<%= listing.location %>" type="text" />
         <br /><br />
         <button>Edit</button>
+
     </form>
-</body>
-</html>
+
